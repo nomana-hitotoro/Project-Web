@@ -1,23 +1,16 @@
 <script lang="ts">
     import InventoryService from './service/inventory.service';
 	import inventory from './store/inventory';
+    import { getGeneratedItem } from './utils/generationHelper';
 
 	const inventoryService = new InventoryService();
 
-	function addItem() {
-		inventoryService.addItem(
-			{
-				maxStack: 999,
-				name: 'coal',
-				price: 2,
-				amount: Math.floor(Math.random() * 999),
-				imgUrl: './assets/coal.png',
-			},
-		);
+	const addItem = () => {
+		inventoryService.addItem(getGeneratedItem());
 	}
 
-	function addSlots() {
-		inventoryService.addSlots(10);
+	const addSlots = (event: any) => {
+		inventoryService.addSlots(Number(event.target.value));
 	}
 </script>
 
@@ -37,7 +30,10 @@
 
 	<input bind:value={$inventory.ownerId} />
 	<button on:click={addItem}>Add item</button>
-	<button on:click={addSlots}>+ 10 slots</button>
+	<button value={-10} on:click={addSlots}>- 10 slots</button>
+	<button value={-1} on:click={addSlots}>- 1 slot</button>
+	<button value={1} on:click={addSlots}>+ 1 slot</button>
+	<button value={10} on:click={addSlots}>+ 10 slots</button>
 </main>
 
 <style>
