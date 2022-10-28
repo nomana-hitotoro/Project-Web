@@ -16,7 +16,7 @@ export default class InventoryService {
         return {
             ownerId: 0,
             items: [],
-            maxSlots: 99
+            maxSlots: 9
         };
     }
 
@@ -31,9 +31,11 @@ export default class InventoryService {
     }
 
     public addSlots(addSlots: number): void {
-        inventoryStore.update(currentInventory => ({
-            ...currentInventory,
-            maxSlots: this.initialInventory.maxSlots + addSlots,
-        }));
+        if (this.initialInventory.maxSlots + addSlots > 0) {
+            inventoryStore.update(currentInventory => ({
+                ...currentInventory,
+                maxSlots: this.initialInventory.maxSlots + addSlots,
+            }));
+        }
     }
 };
