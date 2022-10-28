@@ -1,4 +1,4 @@
 ## Project-Web
 
 #### Stack:
-SvelteJs (FE) + NodeJs (BE) + MongoDB (DB)
+Node v18 : SvelteJs (FE) + NodeJs (BE) + MongoDB (DB)
