@@ -1,7 +1,7 @@
-import type { IItem } from './item.interface';
+import type { IItem } from '../../interfaces/item.interface';
 export interface IInventoryItem extends IItem {
     maxStack: number,
-    amount: number,
+    quantity: number,
 }
 
 export interface IInventory {
@@ -10,4 +10,5 @@ export interface IInventory {
     maxSlots: number,
     sort: string,
     order: string,
+    _HTMLelement: HTMLElement,
 };

@@ -1,7 +1,6 @@
 export default {
     DEFAULT: 'default',
-    ID: 'id',
     NAME: 'name',
-    AMOUNT: 'amount',
+    QUANTITY: 'quantity',
     PRICE: 'price',
 };

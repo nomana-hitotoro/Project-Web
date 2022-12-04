@@ -1,4 +1,4 @@
-import type { IInventoryItem } from "../interface/inventory.interface";
+import type { IInventoryItem } from "../features/Inventory/inventory.interface";
 
 const ores: string[] = ['coal', 'copper', 'tin', 'bronze', 'iron', 'gold'];
 
@@ -7,7 +7,7 @@ export const getGeneratedItem = (): IInventoryItem => {
 
     const item: IInventoryItem = {
         name: ores[itemIdx],
-        amount: Math.floor(Math.random() * 20) + 1,
+        quantity: Math.floor(Math.random() * 20) + 1,
         price: Math.floor(Math.exp(itemIdx)),
         maxStack: 99,
         imgUrl: `./assets/ores/${ores[itemIdx]}.png`,
